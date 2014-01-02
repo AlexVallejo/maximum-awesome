@@ -4,13 +4,16 @@ set nocursorline " don't highlight current line
 inoremap jj <ESC>
 
 " gui settings
-if (&t_Co == 256 || has('gui_running'))
-  if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme solarized
-  else
-    colorscheme desert
-  endif
-endif
+
+" set background=dark
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme railscasts
+
+" draw a gray line at column 80
+set colorcolumn=81
+highlight ColorColumn ctermbg=grey guibg=grey
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "

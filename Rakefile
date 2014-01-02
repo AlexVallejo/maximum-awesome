@@ -171,7 +171,7 @@ task :default do
   Rake::Task['install:ctags'].invoke
   Rake::Task['install:reattach_to_user_namespace'].invoke
   Rake::Task['install:tmux'].invoke
-  Rake::Task['install:macvim'].invoke
+  #Rake::Task['install:macvim'].invoke
 
   # TODO install gem ctags?
   # TODO run gem ctags?
@@ -181,12 +181,16 @@ task :default do
   link_file 'tmux.conf'             , '~/.tmux.conf'
   link_file 'vimrc'                 , '~/.vimrc'
   link_file 'vimrc.bundles'         , '~/.vimrc.bundles'
-  unless File.exist?(File.expand_path('~/.vimrc.local'))
-    cp File.expand_path('vimrc.local'), File.expand_path('~/.vimrc.local'), :verbose => true
-  end
-  unless File.exist?(File.expand_path('~/.vimrc.bundles.local'))
-    cp File.expand_path('vimrc.bundles.local'), File.expand_path('~/.vimrc.bundles.local'), :verbose => true
-  end
+  link_file 'vimrc.local'           , '~/.vimrc.local'
+  link_file 'vimrc.bundles.local'   , '~/.vimrc.bundles.local'
+
+  #Always link vimrc.local and vimrc.bundles.local
+  #unless File.exist?(File.expand_path('~/.vimrc.local'))
+  #  cp File.expand_path('vimrc.local'), File.expand_path('~/.vimrc.local'), :verbose => true
+  #end
+  #unless File.exist?(File.expand_path('~/.vimrc.bundles.local'))
+  #  cp File.expand_path('vimrc.bundles.local'), File.expand_path('~/.vimrc.bundles.local'), :verbose => true
+  #end
 
   # Install Vundle and bundles
   Rake::Task['install:vundle'].invoke
