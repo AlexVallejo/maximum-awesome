@@ -33,6 +33,12 @@ peace-loving hippies. Built for Mac OS X.
 * `prefix v` makes a vertical split
 * `prefix s` makes a horizontal split
 
+If you have three or more panes:
+* `prefix +` opens up the main-horizontal-layout
+* `prefix =` opens up the main-vertical-layout
+
+You can adjust the size of the smaller panes in `tmux.conf` by lowering or increasing the `other-pane-height` and `other-pane-width` options.
+
 ## Install
 
     rake
@@ -41,6 +47,12 @@ peace-loving hippies. Built for Mac OS X.
 In your home directory, Maximum Awesome creates a `.vimrc.local` file where you can customize
 Vim to your heart’s content. However, we’d love to incorporate your changes and improve Vim
 for everyone, so feel free to fork Maximum Awesome and open some pull requests!
+
+## Uninstall
+
+    rake uninstall
+
+Note that this won't remove everything, but your vim configuration should be reset to whatever it was before installing. Some uninstallation steps will be manual.
 
 ## Contribute
 
