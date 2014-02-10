@@ -221,7 +221,6 @@ task :install do
   # TODO run gem ctags?
 
   step 'symlink'
-
   LINKED_FILES.each do |orig, link|
     link_file orig, link
   end
