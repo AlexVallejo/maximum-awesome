@@ -9,6 +9,9 @@ inoremap jj <ESC>
 
 " gui settings
 
+" Enable vim-airline
+let g:airline#extensions#tabline#enabled = 1
+
 " set background=dark
 let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
